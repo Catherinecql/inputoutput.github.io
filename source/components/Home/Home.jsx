@@ -161,14 +161,15 @@ class Home extends Component {
                     <Table color={'blue'} celled padded striped>
                         <Table.Header>
                             <Table.Row>
-                                <Table.HeaderCell colSpan='5' className="TableName">Future Employment Projection</Table.HeaderCell>
+                                <Table.HeaderCell colSpan='6' className="TableName">Future Employment Projection</Table.HeaderCell>
                             </Table.Row>
                             <Table.Row>
                                 <Table.HeaderCell width={3} ></Table.HeaderCell>
                                 <Table.HeaderCell width={3}>Current Full-time Employment <span className="special"> ** </span>in 2015</Table.HeaderCell>
-                                <Table.HeaderCell width={2}>Shock (million$)<span className="special">*</span></Table.HeaderCell>
-                                <Table.HeaderCell width={4}>Change of Full-time Employment in Scenario Model</Table.HeaderCell>
-                                <Table.HeaderCell width={4}>Future Full-time Employment in Scenario Model</Table.HeaderCell>
+                                <Table.HeaderCell width={1}>Shock<span className="special">*</span></Table.HeaderCell>
+                                <Table.HeaderCell width={3}>Future Employment in 2040 in Baseline Model</Table.HeaderCell>
+                                <Table.HeaderCell width={3}>Change of Full-time Employment after Shock</Table.HeaderCell>
+                                <Table.HeaderCell width={3}>Future Full-time Employment in 2040 after Shock</Table.HeaderCell>
                             </Table.Row>
                         </Table.Header>
 
@@ -180,19 +181,21 @@ class Home extends Component {
                                     </Table.Cell>
 
                                     <Table.Cell>
-                                        {item[1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                                        {item[1].toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                                     </Table.Cell>
                                     
                                     <Table.Cell className="cell">
                                         <Input  size='mini' type='number' className="inputchange" value={employment_shock[i]} onChange={this.handleShockEmploymentChange.bind(this,i)}/> 
                                     </Table.Cell>
-                                
+                                    <Table.Cell className="change">
+                                       {item[3].toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                                    </Table.Cell>
                 
                                     <Table.Cell className="change">
                                         {Number(employment_change_m[i]).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                                     </Table.Cell>
                                     <Table.Cell className="change">
-                                        {(Number(item[1])+ Number(employment_change_m[i])).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                                        {(Number(item[3])+ Number(employment_change_m[i])).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                                     </Table.Cell>
                                     </Table.Row> 
                             )}
@@ -201,8 +204,11 @@ class Home extends Component {
                                 </Table.Cell>
                                 <Table.Cell className="title">
                                     Total current employment
+                                </Table.Cell>       
+                                <Table.Cell> 
                                 </Table.Cell>
                                 <Table.Cell> 
+                                    Total future employment(baseline)
                                 </Table.Cell>
                                 <Table.Cell className="title"> 
                                     Total change in employment
@@ -215,15 +221,19 @@ class Home extends Component {
                                 <Table.Cell>
                                 </Table.Cell>
                                 <Table.Cell>
-                                    129,552.10 
+                                     126,919.15 
                                 </Table.Cell>
                                 <Table.Cell> 
+
+                                </Table.Cell>
+                                <Table.Cell>
+                                     152,014.01 
                                 </Table.Cell>
                                 <Table.Cell> 
                                     {Number(employment_change_total).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                                 </Table.Cell>
                                 <Table.Cell> 
-                                    {(Number(employment_change_total)+ 129552.10 ).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                                    {(Number(employment_change_total)+ 152014.01 ).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                                 </Table.Cell>
                             </Table.Row>
                         </Table.Body>
@@ -247,10 +257,10 @@ class Home extends Component {
                             </Table.Row>
                             <Table.Row>
                                 <Table.HeaderCell  width={3} className="TableName"></Table.HeaderCell>
-                                <Table.HeaderCell className="title" width={3}>Current Output in 2015</Table.HeaderCell>
-                                <Table.HeaderCell className="title" width={2}>Shock (million$)<span className="special">*</span></Table.HeaderCell>
-                                <Table.HeaderCell className="title" width={4}>Change of Output(million$) in Scenario Model</Table.HeaderCell>
-                                <Table.HeaderCell className="title" width={4}>Future Output(million$) in 2040 in Scenario Model</Table.HeaderCell>
+                                <Table.HeaderCell className="title" width={3}>Current Output($ million)</Table.HeaderCell>
+                                <Table.HeaderCell className="title" width={2}>Shock<span className="special">*</span></Table.HeaderCell>
+                                <Table.HeaderCell className="title" width={4}>Change of Output($ million) by Shock</Table.HeaderCell>
+                                <Table.HeaderCell className="title" width={4}>Output after Shock($ million)</Table.HeaderCell>
                             </Table.Row>
                         </Table.Header>
 
@@ -262,11 +272,12 @@ class Home extends Component {
                                     </Table.Cell>
 
                                     <Table.Cell>
-                                        {item[1]? item[1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") :null}
+                                        {item[1]? item[1].toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") :null}
                                     </Table.Cell>
                                     <Table.Cell className="cell">
                                         <Input size='mini' type='number' value={output_stock[i]} onChange={this.handleShockOutputChange.bind(this,i)}/> 
                                     </Table.Cell>
+
                                     <Table.Cell className="change">
                                         {Number(output_change_m[i]).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                                     </Table.Cell>
@@ -287,14 +298,14 @@ class Home extends Component {
                                     Total change in output
                                 </Table.Cell>
                                 <Table.Cell className="title"> 
-                                    Total future output
+                                    Total output after shock
                                 </Table.Cell>
                             </Table.Row>
                              <Table.Row>
                                 <Table.Cell>
                                 </Table.Cell>
                                 <Table.Cell>
-                                    18,978,727,136.09 
+                                     18,978.73 
                                 </Table.Cell>
                                 <Table.Cell> 
                                 </Table.Cell>
@@ -302,7 +313,7 @@ class Home extends Component {
                                     {Number(output_change_total).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                                 </Table.Cell>
                                 <Table.Cell> 
-                                    {(Number(output_change_total)+ 18978727136.09 ).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                                    {(Number(output_change_total)+  18978.73  ).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                                 </Table.Cell>
                             </Table.Row>
                         </Table.Body>
