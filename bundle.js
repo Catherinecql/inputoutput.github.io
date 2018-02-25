@@ -21162,7 +21162,7 @@ var Home = function (_Component) {
                                     _react2.default.createElement(
                                         _semanticUiReact.Table.Cell,
                                         { className: 'cell' },
-                                        _react2.default.createElement(_semanticUiReact.Input, { type: 'number', className: 'inputchange', value: employment_shock[i], onChange: _this2.handleShockEmploymentChange.bind(_this2, i) })
+                                        _react2.default.createElement(_semanticUiReact.Input, { size: 'mini', type: 'number', className: 'inputchange', value: employment_shock[i], onChange: _this2.handleShockEmploymentChange.bind(_this2, i) })
                                     ),
                                     _react2.default.createElement(
                                         _semanticUiReact.Table.Cell,
@@ -21316,7 +21316,7 @@ var Home = function (_Component) {
                                     _react2.default.createElement(
                                         _semanticUiReact.Table.Cell,
                                         { className: 'cell' },
-                                        _react2.default.createElement(_semanticUiReact.Input, { type: 'number', value: output_stock[i], onChange: _this2.handleShockOutputChange.bind(_this2, i) })
+                                        _react2.default.createElement(_semanticUiReact.Input, { size: 'mini', type: 'number', value: output_stock[i], onChange: _this2.handleShockOutputChange.bind(_this2, i) })
                                     ),
                                     _react2.default.createElement(
                                         _semanticUiReact.Table.Cell,
