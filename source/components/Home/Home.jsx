@@ -161,7 +161,7 @@ class Home extends Component {
                     <Table color={'blue'} celled padded striped>
                         <Table.Header>
                             <Table.Row>
-                                <Table.HeaderCell colSpan='5' className="TableName">Future Employment</Table.HeaderCell>
+                                <Table.HeaderCell colSpan='5' className="TableName">Future Employment Projection</Table.HeaderCell>
                             </Table.Row>
                             <Table.Row>
                                 <Table.HeaderCell width={3} ></Table.HeaderCell>
