@@ -21161,8 +21161,8 @@ var Home = function (_Component) {
                                     ),
                                     _react2.default.createElement(
                                         _semanticUiReact.Table.Cell,
-                                        null,
-                                        _react2.default.createElement(_semanticUiReact.Input, { type: 'number', value: employment_shock[i], onChange: _this2.handleShockEmploymentChange.bind(_this2, i) })
+                                        { className: 'cell' },
+                                        _react2.default.createElement(_semanticUiReact.Input, { type: 'number', className: 'inputchange', value: employment_shock[i], onChange: _this2.handleShockEmploymentChange.bind(_this2, i) })
                                     ),
                                     _react2.default.createElement(
                                         _semanticUiReact.Table.Cell,
@@ -21315,7 +21315,7 @@ var Home = function (_Component) {
                                     ),
                                     _react2.default.createElement(
                                         _semanticUiReact.Table.Cell,
-                                        null,
+                                        { className: 'cell' },
                                         _react2.default.createElement(_semanticUiReact.Input, { type: 'number', value: output_stock[i], onChange: _this2.handleShockOutputChange.bind(_this2, i) })
                                     ),
                                     _react2.default.createElement(
@@ -22577,7 +22577,7 @@ exports = module.exports = __webpack_require__(174)(undefined);
 
 
 // module
-exports.push([module.i, ".Home {\n  position: absolute;\n  left: 50%;\n  -webkit-transform: translateX(-50%);\n          transform: translateX(-50%);\n  width: 100%; }\n  .Home .header {\n    color: skyblue;\n    text-align: center; }\n\n.Table {\n  margin-top: 20px; }\n  .Table .TableName {\n    color: #e8634c !important;\n    font-size: 17px;\n    font-weight: bold; }\n  .Table .change {\n    background: rgba(204, 255, 255, 0.2); }\n  .Table .title {\n    font-weight: bold; }\n  .Table .special {\n    color: #e8634c !important; }\n", ""]);
+exports.push([module.i, ".Home {\n  position: absolute;\n  left: 50%;\n  -webkit-transform: translateX(-50%);\n          transform: translateX(-50%);\n  width: 100%; }\n  .Home .header {\n    color: skyblue;\n    text-align: center; }\n\n.Table {\n  margin-top: 20px; }\n  .Table .TableName {\n    color: #e8634c !important;\n    font-size: 17px;\n    font-weight: bold; }\n  .Table .change {\n    background: rgba(204, 255, 255, 0.2); }\n  .Table .title {\n    font-weight: bold; }\n  .Table .special {\n    color: #e8634c !important; }\n  .Table .cell {\n    padding: 10px !important; }\n  .Table .inputchange {\n    padding: 0px !important; }\n", ""]);
 
 // exports
 
