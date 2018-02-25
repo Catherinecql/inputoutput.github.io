@@ -183,9 +183,9 @@ class Home extends Component {
                                         {item[1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                                     </Table.Cell>
                                     
-                                        <Table.Cell>
-                                            <Input type='number' value={employment_shock[i]} onChange={this.handleShockEmploymentChange.bind(this,i)}/> 
-                                        </Table.Cell>
+                                    <Table.Cell className="cell">
+                                        <Input type='number' className="inputchange" value={employment_shock[i]} onChange={this.handleShockEmploymentChange.bind(this,i)}/> 
+                                    </Table.Cell>
                                 
                 
                                     <Table.Cell className="change">
@@ -264,7 +264,7 @@ class Home extends Component {
                                     <Table.Cell>
                                         {item[1]? item[1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") :null}
                                     </Table.Cell>
-                                    <Table.Cell>
+                                    <Table.Cell className="cell">
                                         <Input type='number' value={output_stock[i]} onChange={this.handleShockOutputChange.bind(this,i)}/> 
                                     </Table.Cell>
                                     <Table.Cell className="change">
