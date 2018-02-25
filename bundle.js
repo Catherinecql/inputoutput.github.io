@@ -21102,7 +21102,7 @@ var Home = function (_Component) {
                                 _react2.default.createElement(
                                     _semanticUiReact.Table.HeaderCell,
                                     { colSpan: '5', className: 'TableName' },
-                                    'Future Employment'
+                                    'Future Employment Projection'
                                 )
                             ),
                             _react2.default.createElement(
